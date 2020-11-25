@@ -1,2 +1,2 @@
 # Preview
-![Game_Slots](https://github.com/v-saichuk/Game_Slots/raw/master/game.png)
+![Game_Slots](https://github.com/v-saichuk/Game_Slots/raw/master/Game.png)
