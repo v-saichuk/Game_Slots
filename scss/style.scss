@@ -1,0 +1,229 @@
+@import "normalize"; // Сброс стандартных стилей
+@import "fonts"; // Шрифты
+@import "copy_message"; // Сообщение о скопированом тексте
+
+body {
+    background-color: #0d0e0e;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    max-height: 1080px;
+    background: url(../img/global_fon.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    
+    &__wrap{
+        display: flex;
+        max-width: 1920px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+    }
+
+    &__images-block{
+        pointer-events: none; 
+        position: relative;
+        width: 100%;
+    }
+
+    &__img-1{
+        background: url(../img/sparks_back.png) no-repeat bottom;
+        background-size: auto;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-position-x: 0px;
+        background-position-y: 10px;
+        z-index: 1;
+    }
+
+    &__img-2{
+        background: url(../img/witcher.png) no-repeat bottom;
+        background-size: contain;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-position-x: 25px;
+        z-index: 2;
+    }
+
+    &__img-3{
+        background: url(../img/sparks_front.png) no-repeat bottom;
+        background-size: auto;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        background-position-x: 0;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        position: absolute;
+        bottom: 30px;
+        right: 10%;
+        height: 100%;
+    }
+
+    &__title{
+        font-family: 'Cambria-Bold';
+        color: #ffffff;
+        text-shadow: 0 16px 24px #000000;
+        font-size: 209px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+    }
+
+    &__description{
+        color: #fff;
+        font-size: 68px;
+        font-family: "Cambria-Bold";
+        text-transform: uppercase;
+        text-shadow: 0px 16px 24px rgba(0, 0, 0, 0.004);
+        margin: 0;
+    }
+
+    &__promocod {
+        display: flex;
+        margin: 60px 0;
+    }
+
+    &__box-cod{
+        width: 270px;
+        height: 80px;
+        border-radius: 40px 0 0 40px;
+        border: 1px dashed #464646;
+        border-right: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+      
+    &__cod {
+        font-size: 40px;
+        color: #f73427;
+        text-transform: uppercase;
+        letter-spacing: 2.02px;
+        font-family: "ArialMT";
+        font-weight: 400;
+    }
+
+    &__box-coppy-btn {
+        width: 198px;
+        height: 80px;
+        border-radius: 0 40px 40px 0;
+        border: 1px dashed #464646;
+        border-left: 1px solid #464646;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__btn-coppy-cod{
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        font-family: "ArialMT";
+        font-weight: 400;
+        text-decoration: none;
+
+        &:after {
+            display: block;
+            content: "";
+            background-color: #ffffff;
+            height: 1px;
+            width: 0%;
+            top: 3px;
+            left: 50%;
+            position: relative;
+            transition: width .3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        &:hover:after,
+        &:focus:after {
+            width: 100%;
+        }
+    }
+
+    &__btn-play {
+        background-color: rgb(247, 52, 39);
+        box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.004);
+        color: #fff;
+        text-transform: uppercase;
+        padding: 32px 120px;
+        display: inline-block;
+        border-radius: 50px;
+        font-size: 20px;
+        text-decoration: none;
+        font-family: "ArialMT";
+        font-weight: bold;
+        letter-spacing: 2.02px;
+        -webkit-animation: 1500ms btn_play infinite;
+        -moz-animation: 1500ms btn_play infinite;
+        -o-animation: 1500ms btn_play infinite;
+        animation: 1500ms btn_play infinite;
+
+        @keyframes btn_play {
+            0% { background-color: #f73427; box-shadow: 0 0 3px #f73427; }
+            50% { background-color: #f74336; box-shadow: 0 0 20px #f74336; }
+            100% { background-color: #f73427; box-shadow: 0 0 3px #f73427; }
+            }
+
+        &:hover{
+            background-color: rgb(247, 52, 39);
+            box-shadow: 0 0 20px #f74336;
+            -webkit-animation: 0;
+            -moz-animation: 0;
+            -o-animation: 0;
+            animation: 0;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    
+    &__wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        margin-left: 70px;
+    }
+
+    &__copyright{
+        margin-right: 70px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__copyright-text{
+        color: #464646;
+    }
+}
+
+@import "media"; // Адаптив (Media запросы)
